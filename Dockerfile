@@ -1,11 +1,11 @@
 # Docker multistage build to reduce image size
-FROM python:3.7 AS build
+FROM python:3.10 AS build
 RUN python -m venv /opt/venv
 # Make sure we use the virtualenv:
 ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install mlflow psycopg2 mysqlclient
 
-FROM python:3.7-slim
+FROM python:3.10-slim
 COPY --from=build /opt/venv /opt/venv
 # Make sure we use the virtualenv:
 ENV PATH="/opt/venv/bin:$PATH"

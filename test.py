@@ -10,7 +10,6 @@ from argparse import Namespace
 # Import mlflow libraries
 import mlflow
 import mlflow.keras
-from keras.callbacks import TensorBoard
 from keras.datasets import fashion_mnist
 from keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPooling2D
 from keras.models import Sequential

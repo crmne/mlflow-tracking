@@ -31,18 +31,13 @@ More information at https://mlflow.org/docs/latest/tracking.html#mlflow-tracking
 
         docker run crmne/mlflow-tracking -p 5000:5000 -d
 
-2. Install Pipenv (if you don't have it)
+2. Install dependencies (you may want to do that in a virtualenv)
 
-        pip install pipenv
+        pip install mlflow tensorflow keras
 
-3. Install dependencies
+3. Run example model
 
-        pipenv install
-
-4. Run example model
-
-        pipenv run python test.py
+        python test.py
 
 [db]: https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls
 [store]: https://mlflow.org/docs/latest/tracking.html#id10
-
