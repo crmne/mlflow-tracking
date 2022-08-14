@@ -7,6 +7,7 @@ RUN pip install mlflow psycopg2 mysqlclient
 
 FROM python:3.10-slim
 COPY --from=build /opt/venv /opt/venv
+COPY --from=build /usr/lib /usr/lib
 # Make sure we use the virtualenv:
 ENV PATH="/opt/venv/bin:$PATH"
 EXPOSE 5000/tcp
