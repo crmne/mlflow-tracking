@@ -3,7 +3,7 @@ FROM python:3.10 AS build
 RUN python -m venv /opt/venv
 # Make sure we use the virtualenv:
 ENV PATH="/opt/venv/bin:$PATH"
-RUN pip install mlflow psycopg2 mysqlclient
+RUN pip install mlflow psycopg2 mysqlclient google-cloud-storage
 
 FROM python:3.10-slim
 COPY --from=build /opt/venv /opt/venv
